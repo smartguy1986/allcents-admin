@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://www.allcents.tech/demo/backend/admin/';
+$config['base_url'] = 'http://localhost/allcents/admin/';
 
 /*
 |--------------------------------------------------------------------------
@@ -525,3 +525,4 @@ $config['proxy_ips'] = '';
 $config['smtp_crypto'] = 'ssl';
 $config['crlf'] = "\r\n";
 $config['newline'] = "\r\n";
+
