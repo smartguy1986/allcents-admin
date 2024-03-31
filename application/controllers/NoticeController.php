@@ -279,6 +279,19 @@ class NoticeController extends CI_Controller
         }
     }
 
+    public function deletenotice($uid)
+    {
+        $id = $this->AdminModel->deletenotice($uid);
+
+        if ($id) {
+            $this->session->set_flashdata('success', 'Notice deleted successfully!');
+            redirect('notices');
+        } else {
+            $this->session->set_flashdata('error', 'Notice not deleted. Please try again!');
+            redirect('notices');
+        }
+    }
+
     public function enablenotice($uid)
     {
         $val = array("status" => '1');

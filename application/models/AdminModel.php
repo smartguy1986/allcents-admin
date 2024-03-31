@@ -704,6 +704,13 @@ class AdminModel extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function deletenotice($cid)
+    {
+        $this->db->where('id', $cid);
+        $this->db->delete('snr_notices');
+        return true;
+    }
+
     public function get_centres($conditions = null)
     {
         $this->db->select('*');

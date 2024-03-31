@@ -19,8 +19,16 @@ a {
 	text-decoration: none
 }
 
-.red_link{
+.red_link {
 	color: #f62718;
+}
+
+.bg-danger td {
+	color: #fff !important;
+}
+
+.bg-danger td a {
+	color: #fff !important;
 }
 
 .wrapper {
@@ -393,6 +401,7 @@ a {
 	border-right: 1.5px solid #fff;
 	color: #fff !important;
 }
+
 .breadcrumb-item.active {
 	color: #fff !important;
 }
@@ -409,7 +418,7 @@ a {
 	content: "\ea5c"
 }
 
-.breadcrumb-item a bx{
+.breadcrumb-item a bx {
 	color: #fff !important;
 }
 

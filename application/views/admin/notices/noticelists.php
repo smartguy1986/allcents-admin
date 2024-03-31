@@ -69,7 +69,7 @@
                                                 //echo "|&nbsp;<a href='".base_url()."events/enable/".$article->id."' class='confirm'><i class='fadeIn animated bx bxs-lock'></i></a>";
                                             }
                                             ?>
-                                            |&nbsp;<a href='#' data-bs-toggle="modal" data-bs-target="#deleteModal" data-deletelink="<?php echo base_url() . 'notices/delete/' . $article->id; ?>" data-deletetext="Are you sure to delete this notice?" class="red_link"><i class='fadeIn animated bx bxs-trash'></i></a>
+                                            |&nbsp;<a href='#' data-bs-toggle="modal" data-bs-target="#deleteModal" data-deletelink="<?php echo base_url() . 'notices/delete/' . $article->id; ?>" data-deletetext="Are you sure to delete this notice?" class="red_link"><i class='fadeIn animated bx bxs-trash'></i></a> 
                                     <?php
                                         }
                                         echo "</td>";

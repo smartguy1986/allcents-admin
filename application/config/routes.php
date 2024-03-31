@@ -170,6 +170,7 @@ $route['notices/save'] = 'NoticeController/savenotice';
 $route['notices/getarticle'] = 'NoticeController/getnotice';
 $route['notices/disable/(:num)'] = 'NoticeController/disablenotice/$1';
 $route['notices/enable/(:num)'] = 'NoticeController/enablenotice/$1';
+$route['notices/delete/(:num)'] = 'NoticeController/deletenotice/$1';
 
 
 $route['notifications'] = 'NotificationController';
