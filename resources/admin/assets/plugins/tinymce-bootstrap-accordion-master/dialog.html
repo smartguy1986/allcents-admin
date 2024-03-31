@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.7/tinymce.min.js'></script>
+	<script>
+				tinymce.init({
+				selector: "textarea#accordion-content"
+			});
+	</script>
+</head>
+<body>
+	<h3>Title:</h3>
+	<input id="accordion-title"/>
+	<h3>Content:</h3>
+	<textarea id="accordion-content"></textarea>
+	<h3>Open at first?</h3>
+	<p>
+		<select id="accordion-open">
+			<option>No</option>
+			<option>Yes</option>
+		</select>
+	</p>
+</body>
+</html>
