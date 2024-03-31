@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-defined('BASEPATH') or exit ('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class NotificationController extends CI_Controller
 {
@@ -145,5 +145,16 @@ class NotificationController extends CI_Controller
         }
     }
 
+    public function announcementdelete($uid)
+    {
+        $id = $this->AdminModel->delete_announcement($uid);
 
+        if ($id) {
+            $this->session->set_flashdata('success', 'Announcement Enabled successfully!');
+            redirect('announcements');
+        } else {
+            $this->session->set_flashdata('error', 'Announcement not enabled. Please try again!');
+            redirect('announcements');
+        }
+    }
 }

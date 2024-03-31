@@ -32,7 +32,7 @@ class NoticeController extends CI_Controller
 
     public function index()
     {
-        $data['categories'] = $this->AdminModel->get_notice_category_info();
+        $data['categories'] = $this->AdminModel->get_notice_category_info($fulllist = true);
         $this->load->view('admin/noticecategory/categorylist', $data);
     }
 

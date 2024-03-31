@@ -363,10 +363,12 @@ class AdminModel extends CI_Model
         return $this->db->affected_rows();
     }
 
-    public function get_category_info()
+    public function get_category_info($fulllist = false)
     {
         $this->db->select('*');
-        //$this->db->where('status', '1');
+        if (!$fulllist) {
+            $this->db->where('status', '1');
+        }
         $this->db->order_by('cat_name', 'ASC');
         $this->db->from('snr_category');
         $query = $this->db->get();
@@ -403,10 +405,12 @@ class AdminModel extends CI_Model
         return $query->result();
     }
 
-    public function get_notice_category_info()
+    public function get_notice_category_info($fulllist = false)
     {
         $this->db->select('*');
-        $this->db->where('status', '1');
+        if (!$fulllist) {
+            $this->db->where('status', '1');
+        }
         $this->db->order_by('cat_name', 'ASC');
         $this->db->from('snr_category_notice');
         $query = $this->db->get();
@@ -870,6 +874,13 @@ class AdminModel extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function deletetopic($uid)
+    {
+        $this->db->where('id', $uid);
+        $this->db->delete('snr_topics');
+        return true;
+    }
+
     public function changenotificationstatus($val, $uid)
     {
         $this->db->where('id', $uid);
@@ -1003,6 +1014,13 @@ class AdminModel extends CI_Model
         $this->db->where('id', $uid);
         $this->db->update('snr_announcement', $data);
         return $this->db->affected_rows();
+    }
+
+    public function delete_announcement($uid)
+    {
+        $this->db->where('id', $uid);
+        $this->db->delete('snr_announcement');
+        return true;
     }
 
     public function get_region_id($region)

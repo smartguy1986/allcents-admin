@@ -32,7 +32,7 @@ class CategoryController extends CI_Controller
 
     public function index()
     {
-        $data['categories'] = $this->AdminModel->get_category_info();
+        $data['categories'] = $this->AdminModel->get_category_info($fulllist = true);
         $this->load->view('admin/category/categorylist', $data);
     }
 

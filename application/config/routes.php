@@ -161,6 +161,7 @@ $route['events/save'] = 'TopicController/savetopic';
 $route['events/getarticle'] = 'TopicController/getarticle';
 $route['events/disable/(:num)'] = 'TopicController/disable/$1';
 $route['events/enable/(:num)'] = 'TopicController/enable/$1';
+$route['events/delete/(:num)'] = 'TopicController/delete/$1';
 
 $route['notices'] = 'NoticeController/noticelist';
 $route['notices/add'] = 'NoticeController/addnotice';
@@ -182,6 +183,7 @@ $route['announcements'] = 'NotificationController/announcementlist';
 $route['addannouncement'] = 'NotificationController/addannouncement';
 $route['announcements/disable/(:num)'] = 'NotificationController/announcementdisable/$1';
 $route['announcements/enable/(:num)'] = 'NotificationController/announcementenable/$1';
+$route['announcements/delete/(:num)'] = 'NotificationController/announcementdelete/$1';
 
 // $route['centres'] = 'CentreController';
 // $route['centres/import'] = 'CentreController/import';

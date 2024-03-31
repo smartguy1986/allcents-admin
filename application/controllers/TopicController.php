@@ -231,6 +231,19 @@ class TopicController extends CI_Controller
         }
     }
 
+    public function delete($uid)
+    {
+        $id = $this->AdminModel->deletetopic($uid);
+
+        if ($id) {
+            $this->session->set_flashdata('success', 'Event deleted successfully!');
+            redirect('events');
+        } else {
+            $this->session->set_flashdata('error', 'Event not deleted. Please try again!');
+            redirect('events');
+        }
+    }
+
     public function enable($uid)
     {
         $val = array("status" => '1');

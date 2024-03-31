@@ -52,32 +52,36 @@
                                         echo "<tr class='" . $articleclass . "'>";
                                         echo "<td>" . $article->id . "</td>";
                                         echo "<td>" . $article->title . "</td>";
-                                        echo "<td>" . substr($article->message,0,50) . "...</td>";
+                                        echo "<td>" . substr($article->message, 0, 50) . "...</td>";
                                         echo "<td>";
-                                        if(!empty($article->branch)) { echo branch_name($article->branch)->branch_name; } else { echo "All"; }
+                                        if (!empty($article->branch)) {
+                                            echo branch_name($article->branch)->branch_name;
+                                        } else {
+                                            echo "All";
+                                        }
                                         echo "</td>";
                                         echo "<td>";
-                                        if(!empty($article->cell)) { echo cell_name($article->cell)->cell_name; } else { echo 'All'; }
+                                        if (!empty($article->cell)) {
+                                            echo cell_name($article->cell)->cell_name;
+                                        } else {
+                                            echo 'All';
+                                        }
                                         echo "</td>";
-                                        echo "<td>" . date("j F, Y", strtotime($article->created_at)) . "</td>";                                      
+                                        echo "<td>" . date("j F, Y", strtotime($article->created_at)) . "</td>";
                                         echo "<td>";
                                         if ($this->session->userdata('logged_in_info')->userrole == 1) {
                                             if ($article->status == 1) {
-                                                ?>
-                                                <a href='#' data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                                    data-deletelink="<?php echo base_url() . 'announcements/disable/' . $article->id; ?>"
-                                                    data-deletetext="Are you sure to disable this notification?"><i
-                                                        class='fadeIn animated bx bxs-lock'></i></a>
-                                                <?php
+                                    ?>
+                                                <a href='#' data-bs-toggle="modal" data-bs-target="#deleteModal" data-deletelink="<?php echo base_url() . 'announcements/disable/' . $article->id; ?>" data-deletetext="Are you sure to disable this notification?"><i class='fadeIn animated bx bxs-lock'></i></a>
+                                            <?php
                                             } else {
-                                                ?>
-                                                <a href='#' data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                                    data-deletelink="<?php echo base_url() . 'announcements/enable/' . $article->id; ?>"
-                                                    data-deletetext="Are you sure to enable this notification?"><i
-                                                        class='fadeIn animated bx bxs-lock'></i></a>
-                                                <?php
+                                            ?>
+                                                <a href='#' data-bs-toggle="modal" data-bs-target="#deleteModal" data-deletelink="<?php echo base_url() . 'announcements/enable/' . $article->id; ?>" data-deletetext="Are you sure to enable this notification?"><i class='fadeIn animated bx bxs-lock'></i></a>
+                                            <?php
                                                 //echo "|&nbsp;<a href='".base_url()."events/enable/".$article->id."' class='confirm'><i class='fadeIn animated bx bxs-lock'></i></a>";
-                                            }
+                                            } ?>
+                                            |&nbsp;<a href='#' data-bs-toggle="modal" data-bs-target="#deleteModal" data-deletelink="<?php echo base_url() . 'announcements/delete/' . $article->id; ?>" data-deletetext="Are you sure to delete this notification?" class="red_link"><i class='fadeIn animated bx bxs-trash'></i></a>
+                                    <?php
                                         }
                                         echo "</td>";
                                         echo "</tr>";
@@ -102,19 +106,17 @@
         <!--start overlay-->
         <div class="overlay toggle-icon"></div>
         <!--end overlay-->
-        <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i
-                class='bx bxs-up-arrow-alt'></i></a>
+        <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
         <!--End Back To Top Button-->
         <footer class="page-footer">
             <p class="mb-0">Copyright ©
-                <?php echo date("Y"); ?>. All right reserved by <a href="https://www.allcents.tech"
-                    target="_blank">AllCents App.</a>
+                <?php echo date("Y"); ?>. All right reserved by <a href="https://www.allcents.tech" target="_blank">AllCents App.</a>
             </p>
         </footer>
     </div>
     <?php $this->view('admin/inc/foot'); ?>
     <script>
-        $('#deleteModal').on('show.bs.modal', function (event) {
+        $('#deleteModal').on('show.bs.modal', function(event) {
             console.log('modal open');
             var myValid = $(event.relatedTarget).data('deletelink');
             var mytext = $(event.relatedTarget).data('deletetext');
@@ -122,9 +124,11 @@
             $("#confirmBtndel").attr("href", myValid);
             $("#deletetext").text(mytext);
         });
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#example5').DataTable({
-                "order": [[5, "desc"]]
+                "order": [
+                    [5, "desc"]
+                ]
             });
         });
     </script>
