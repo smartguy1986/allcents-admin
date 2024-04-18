@@ -158,6 +158,11 @@ class NoticeController extends CI_Controller
         $title = $this->input->post('title');
         $topic_content = $this->input->post('topiccontent');
         $notice_excerpt = $this->input->post('notice_excerpt');
+
+        if(empty($topic_content) || empty($notice_excerpt)){
+            $this->session->set_flashdata('error', 'Notice content or excerpt can not be empty. Please try again!');
+            redirect('notices');
+        }
         $slug = slugify($title);
 
         $conditions = array('slug' => $slug);

@@ -130,7 +130,7 @@ $route['noticecategories/edit/(:num)'] = 'NoticeController/edit/$1';
 $route['noticecategories/update'] = 'NoticeController/update';
 $route['noticecategories/getcategorydetails'] = 'NoticeController/getcategorydetails';
 $route['noticecategories/disablecat/(:num)'] = 'NoticeController/disablecat/$1';
-$route['noticecategories/deletecat/(:num)'] = 'NoticeController/disablecat/$1';
+$route['noticecategories/deletecat/(:num)'] = 'NoticeController/deletecat/$1';
 $route['noticecategories/enablecat/(:num)'] = 'NoticeController/enablecat/$1';
 
 $route['branches'] = 'CategoryController/branchlist';

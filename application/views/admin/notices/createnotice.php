@@ -51,13 +51,13 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="inputFirstName" class="form-label">Content</label>
-                                <textarea class="form-control text-ar-topic topictextarea" id="topictextarea"
+                                <textarea class="form-control topictextarea" id="topictextarea"
                                     name="topiccontent" data-error2="Please Enter Content"></textarea>
                                 <label></label>
                             </div>
                             <div class="col-md-12">
                                 <label for="inputFirstName" class="form-label">Excerpt</label>
-                                <textarea class="form-control text-ar-topic" id=""
+                                <textarea class="form-control" id="topictextarea"
                                     name="notice_excerpt" data-error2="Please Enter excerpt"></textarea>
                                 <label></label>
                             </div>

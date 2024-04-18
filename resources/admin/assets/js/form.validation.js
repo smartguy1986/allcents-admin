@@ -421,26 +421,24 @@ function formValidateTopic() {
         value = $(this).val();
         error_text = $(this).attr('data-error2');
         console.log(value);
-        if (value.length < 1) {
+        if (value.length < 1 || value.trim() === '') {
             flag = '0';
             error_html = '<span class="field-error">' + error_text + '</span>';
             $(this).next('label').after(error_html);
+            console.log(error_html);
         }
     });
 
     $(".text-ar-topic").each(function () {
         value = $(this).val();
-        //name = $(this).attr('name');
-        //label_text = $(this).next('label').children('span').html();
         error_text = $(this).attr('data-error2');
         console.log(value);
-        //var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (value == '' || value == null) {
+        if (value === '' || value == null || value.length < 1) {
             flag = '0';
-            //$(this).next('label').attr('style', 'border-color: #ff0000');
             error_html = '<span class="field-error">' + error_text + '</span>';
             $(this).next('label').after(error_html);
             //textarea.text-active + label{border-color: #f18a21;}
+            console.log(error_html);
         }
     });
 
